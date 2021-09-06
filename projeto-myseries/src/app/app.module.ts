@@ -7,15 +7,10 @@ import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
 import { AboutComponent } from './about/about.component';
 import { ClientesComponent } from './clientes/clientes.component';
-import { FeaturesComponent } from './features/features.component';
-import { ServicosComponent } from './servicos/servicos.component';
-import { CtaComponent } from './cta/cta.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { CountsComponent } from './counts/counts.component';
-import { TestimonialsComponent } from './testimonials/testimonials.component';
-import { TeamComponent } from './team/team.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
+import { SeriesComponent } from './series/series.component';
+import { CliseriesComponent } from './cliseries/cliseries.component';
 
 @NgModule({
   declarations: [
@@ -24,15 +19,10 @@ import { FooterComponent } from './footer/footer.component';
     HeroComponent,
     AboutComponent,
     ClientesComponent,
-    FeaturesComponent,
-    ServicosComponent,
-    CtaComponent,
-    PortfolioComponent,
-    CountsComponent,
-    TestimonialsComponent,
-    TeamComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    SeriesComponent,
+    CliseriesComponent
   ],
   imports: [
     BrowserModule,

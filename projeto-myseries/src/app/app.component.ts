@@ -48,8 +48,39 @@ ngAfterViewInit() {
     $(".mobile-nav, .mobile-nav-toggle").hide();
   }
 
+  // Toggle .header-scrolled class to #header when page is scrolled
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 100) {
+      $('#header').addClass('header-scrolled');
+    } else {
+      $('#header').removeClass('header-scrolled');
+    }
+  });
+
+  if ($(window).scrollTop() > 100) {
+    $('#header').addClass('header-scrolled');
+  }
+
   // Clients carousel (uses the Owl Carousel library)
   $(".clients-carousel").owlCarousel({
+    autoplay: true,
+    dots: true,
+    loop: true,
+    responsive: {
+      0: {
+        items: 2
+      },
+      768: {
+        items: 4
+      },
+      900: {
+        items: 6
+      }
+    }
+  });
+
+  // Cliseries carousel (uses the Owl Carousel library)
+  $(".cliseries-carousel").owlCarousel({
     autoplay: true,
     dots: true,
     loop: true,
@@ -81,5 +112,7 @@ ngAfterViewInit() {
     loop: true,
     items: 1
   });
+
+  
 }
 }

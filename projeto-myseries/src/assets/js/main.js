@@ -7,6 +7,7 @@
 !(function($) {
   "use strict";
 
+  /*
   // Preloader
   $(window).on('load', function() {
     if ($('#preloader').length) {
@@ -167,6 +168,7 @@
     }
   });
 
+
   // Porfolio isotope and filter
   $(window).on('load', function() {
     var portfolioIsotope = $('.portfolio-container').isotope({
@@ -212,7 +214,7 @@
     loop: true,
     items: 1
   });
-
+*/
   // Init AOS
   function aos_init() {
     AOS.init({
