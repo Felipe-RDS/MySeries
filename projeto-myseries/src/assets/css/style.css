@@ -540,7 +540,7 @@ section {
 --------------------------------------------------------------*/
 .about .content h3 {
   font-weight: 700;
-  font-size: 28px;
+  font-size: 35px;
   font-family: "Poppins", sans-serif;
 }
 
@@ -558,19 +558,19 @@ section {
   position: absolute;
   font-size: 20px;
   left: 0;
-  top: -3px;
+  top: -5px;
   color: #ffc451;
 }
 
 .about .content p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 12px;
 }
 
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
 .clients {
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .clients .owl-item {
@@ -581,7 +581,7 @@ section {
 }
 
 .clients .owl-item img {
-  width: 70%;
+  width: 100%;
   opacity: 0.5;
   transition: 0.3s;
   filter: grayscale(100);
