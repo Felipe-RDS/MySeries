@@ -6,22 +6,14 @@
       </div>
     </div>
   </div>
-  <div class="container" data-aos="zoom-in">
-
+  <div class="container" data-aos="zoom-in" *ngFor="let obj of animesLista">
     <div class="owl-carousel clients-carousel">
-      <img [src]="imgHxh" alt="">
-      <img [src]="imgJjk" alt="">
-      <img [src]="imgOp" alt="">
-      <img [src]="imgNaruto" alt="">
-      <img [src]="imgSlime" alt="">
-      <img [src]="imgOverlord" alt="">
-      <img [src]="imgGintama" alt="">
-      <img [src]="imgBleach" alt="">
+      <img [src]="obj.imagem" >
     </div>
-
   </div>
-  </section>
-  <section id="series" class="home">
+
+</section>
+<section id="series" class="home">
   <div class="container" data-aos="fade-up">
     <div class="row">
       <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
@@ -42,6 +34,5 @@
       <img [src]="imgDark" alt="">
       <img [src]="imgStarTrek" alt="">
     </div>
-
   </div>
 </section>

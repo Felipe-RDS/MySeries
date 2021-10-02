@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConteudosService } from './../services/conteudos.service';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
 
   //imagens animes
   public imgHxh = "./../../assets/img/clients/client-1.jpg";
@@ -17,7 +19,7 @@ export class HomeComponent implements OnInit {
   public imgGintama = "./../../assets/img/clients/client-7.png";
   public imgBleach = "./../../assets/img/clients/client-8.png";
 
-  //imagens series
+  //imagens filmes
   public imgMand = "./../../assets/img/cliseries/cliseries-1.jpg";
   public imgWitcher = "./../../assets/img/cliseries/cliseries-2.jpg";
   public imgSthings = "./../../assets/img/cliseries/cliseries-3.jpg";
@@ -27,9 +29,12 @@ export class HomeComponent implements OnInit {
   public imgDark = "./../../assets/img/cliseries/cliseries-7.jpg";
   public imgStarTrek = "./../../assets/img/cliseries/cliseries-8.jpg";
 
-  constructor() { }
+  public animesLista: Array<any> = [ ];
+
+  constructor(private animesService: ConteudosService) { }
 
   ngOnInit(): void {
+    this.animesLista = this.animesService.getAllAnimes();
   }
 
 }
