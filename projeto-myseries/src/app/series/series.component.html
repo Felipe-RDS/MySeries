@@ -1,0 +1,24 @@
+<div class="text-left mt-5">
+  <h2>Series</h2>
+</div>
+
+<div class="row">
+
+  <div class="col-sm-4 mb-3" *ngFor="let obj of seriesLista">
+
+    <div class="card" style="width: 18rem;">
+      <img [src]="obj.imagem" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title"> {{obj.nome}} </h5>
+        <a [routerLink]="['/series-detalhes', obj.id]" class="btn btn-dark mr-3 text-warning">
+          Info
+        </a>
+        <a class="btn btn-dark text-warning">
+          + Adicionar a lista
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</div>

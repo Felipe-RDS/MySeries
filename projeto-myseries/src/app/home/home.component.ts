@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ConteudosService } from './../services/conteudos.service';
+import { Conteudo } from 'src/app/model/conteudo.model';
 
+declare var $: any;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
 
 
@@ -29,12 +32,55 @@ export class HomeComponent implements OnInit {
   public imgDark = "./../../assets/img/cliseries/cliseries-7.jpg";
   public imgStarTrek = "./../../assets/img/cliseries/cliseries-8.jpg";
 
-  public animesLista: Array<any> = [ ];
+  public animesLista: Array<Conteudo> = [ ];
+  public seriesLista: Array<Conteudo> = [ ];
 
-  constructor(private animesService: ConteudosService) { }
+  constructor(private animesService: ConteudosService,
+              private seriesService: ConteudosService) { }
 
   ngOnInit(): void {
     this.animesLista = this.animesService.getAllAnimes();
+    this.seriesLista = this.seriesService.getAllSeries();
   }
+
+  ngAfterViewInit() {
+
+      // Clients carousel (uses the Owl Carousel library)
+      $(".clients-carousel").owlCarousel({
+        autoplay: true,
+        dots: true,
+        loop: true,
+        responsive: {
+          0: {
+            items: 2
+          },
+          768: {
+            items: 4
+          },
+          900: {
+            items: 6
+          }
+        }
+      });
+
+      // Cliseries carousel (uses the Owl Carousel library)
+      $(".cliseries-carousel").owlCarousel({
+        autoplay: true,
+        dots: true,
+        loop: true,
+        responsive: {
+          0: {
+            items: 2
+          },
+          768: {
+            items: 4
+          },
+          900: {
+            items: 6
+          }
+        }
+      });
+
+}
 
 }

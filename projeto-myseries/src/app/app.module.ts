@@ -8,7 +8,11 @@ import { HeroComponent } from './hero/hero.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { ConteudosComponent } from './conteudos/conteudos.component';
+import { AnimesComponent } from './animes/animes.component';
+import { AnimesDetalhesComponent } from './animes-detalhes/animes-detalhes.component';
+import { SeriesComponent } from './series/series.component';
+import { SeriesDetalhesComponent } from './series-detalhes/series-detalhes.component';
+
 
 
 @NgModule({
@@ -19,7 +23,10 @@ import { ConteudosComponent } from './conteudos/conteudos.component';
     ContactComponent,
     FooterComponent,
     HomeComponent,
-    ConteudosComponent,
+    AnimesComponent,
+    AnimesDetalhesComponent,
+    SeriesComponent,
+    SeriesDetalhesComponent,
   ],
   imports: [
     BrowserModule,

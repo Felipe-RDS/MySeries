@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row" >
+    <div class="col card mt-4 mb-4 bg-dark text-warning" style="width: 15rem;">
+      <h3>{{serie.nome}}</h3>
+
+      <img [src]="serie.imagem" class="card-img-left">
+      <a class="btn btn-warning text-dark mt-2 mb-2">
+        + Adicionar a lista
+      </a>
+      <a class="btn btn-warning text-dark mt-2 mb-2">
+        + Adicionar aos favoritos
+      </a>
+    </div>
+    <div class="col-6 card-body mt-4 mb-4 ml-2 ">
+      <h4 class= "bg-dark text-warning">Sinopse</h4>
+      <h6>{{serie.descricao}}</h6>
+      <h4 class="bg-dark text-warning mt-5">Comentários</h4>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Escreva um comentario:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <a class = "btn btn-dark text-warning mt-4 ml-6">Adicionar comentário</a>
+      </div>
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+</div>

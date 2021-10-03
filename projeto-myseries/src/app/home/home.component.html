@@ -1,3 +1,4 @@
+
 <section id="animes" class="home">
   <div class="container" data-aos="fade-up">
     <div class="row">
@@ -6,9 +7,16 @@
       </div>
     </div>
   </div>
-  <div class="container" data-aos="zoom-in" *ngFor="let obj of animesLista">
+  <div class="container" data-aos="zoom-in">
     <div class="owl-carousel clients-carousel">
-      <img [src]="obj.imagem" >
+      <img [src]="imgHxh" alt="">
+      <img [src]="imgJjk" alt="">
+      <img [src]="imgOp" alt="">
+      <img [src]="imgNaruto" alt="">
+      <img [src]="imgSlime" alt="">
+      <img [src]="imgOverlord" alt="">
+      <img [src]="imgGintama" alt="">
+      <img [src]="imgBleach" alt="">
     </div>
   </div>
 </section>
@@ -21,10 +29,11 @@
     </div>
   </div>
 
-  <div class="container" data-aos="zoom-in">
+  <div class="container" data-aos="zoom-in" *ngFor = "let obj of seriesLista">
 
-    <div class="owl-carousel cliseries-carousel">
-      <img [src]="imgMand" alt="">
+    <div class="owl-carousel cliseries-carousel" >
+      <a [routerLink]="['/series-detalhes', obj.id]"><img [src]="obj.imagem"></a>
+      <!--
       <img [src]="imgWitcher" alt="">
       <img [src]="imgSthings" alt="">
       <img [src]="imgBad" alt="">
@@ -32,6 +41,7 @@
       <img [src]="imgLoki" alt="">
       <img [src]="imgDark" alt="">
       <img [src]="imgStarTrek" alt="">
+      -->
     </div>
   </div>
 </section>
