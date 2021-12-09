@@ -14,7 +14,9 @@ export class AnimesComponent implements OnInit {
   constructor(private animesService: ConteudosService) { }
 
   ngOnInit(): void {
-    this.animesLista = this.animesService.getAllAnimes();
+    this.animesService.getAllAnimes().subscribe((listaAnimes: Conteudo[])=>{
+      this.animesLista = listaAnimes;
+    });
   }
 
 }

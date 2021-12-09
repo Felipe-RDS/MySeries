@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Conteudo } from './../model/conteudo.model';
-import { ConteudosService } from '../services/conteudos.service';
+import { Conteudo } from '../../model/conteudo.model';
+import { ConteudosService } from '../../services/conteudos.service';
 
 
 @Component({
@@ -22,7 +22,9 @@ export class AnimesDetalhesComponent implements OnInit {
     const codigo: number = Number(this.rotaAtiva.snapshot.paramMap.get('id'));
     console.log(codigo);
 
-    this.anime = this.animesService.getIdAnimes(codigo);
+    this.animesService.getIdAnimes(codigo).subscribe((anime: Conteudo)=>{
+      this.anime = anime;
+    })
   }
 
 }

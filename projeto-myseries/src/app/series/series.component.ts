@@ -14,7 +14,9 @@ export class SeriesComponent implements OnInit {
   constructor(private seriesService: ConteudosService) { }
 
   ngOnInit(): void {
-    this.seriesLista = this.seriesService.getAllSeries();
+    this.seriesService.getAllSeries().subscribe((listaSeries: Conteudo[])=>{
+      this.seriesLista = listaSeries;
+    });
   }
 
 }

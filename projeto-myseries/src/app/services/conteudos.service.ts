@@ -1,9 +1,20 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { Conteudo } from 'src/app/model/conteudo.model';
+import { Observable } from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'content-type': 'application/json'
+  })
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class ConteudosService {
+  /*
   public animesLista: Array<Conteudo> = [
     {
       id: 0,
@@ -29,7 +40,7 @@ export class ConteudosService {
     {
       id: 3,
       nome: 'Naruto',
-      descricao: 'Houve um homem que conquistou tudo aquilo que o mundo tinha a oferecer, o lendário Rei dos Piratas, Gold Roger. Capturado e condenado à execução pelo Governo Mundial, suas últimas palavras lançaram legiões aos mares. "Meu tesouro? Se quiserem, podem pegá-lo. Procurem-no! Ele contém tudo que este mundo pode oferecer!". Foi a revelação do maior tesouro, o One Piece, cobiçado por homens de todo o mundo, sonhando com fama e riqueza imensuráveis... Assim começou a Grande Era dos Piratas!',
+      descricao: 'A Vila Oculta da Folha é lar dos ninjas mais sorrateiros. Mas doze anos atrás, uma temível Raposa de Nove Caudas aterrorizou a vila, até ser derrotada e selada no corpo de um garoto recém-nascido.',
       status: true,
       imagem: './../../assets/img/clients/client-4.jpg'
     },
@@ -62,7 +73,9 @@ export class ConteudosService {
       imagem: './../../assets/img/clients/client-8.png'
     }
   ];
-
+  */
+  public animesLista: Array<Conteudo> = [];
+  /*
   public seriesLista: Array<Conteudo> = [
     {
       id: 0,
@@ -119,33 +132,40 @@ export class ConteudosService {
       descricao:'Em Star Trek: Discovery, dez anos antes da famosa missão do Capitão Kirk, a tripulação do USS Discovery se depara com novos mundos e civilizações, sendo obrigada a se aprofundar em temas familiares e explorar situações até então desconhecidas.',
       status: true,
       imagem:'./../../assets/img/cliseries/cliseries-8.jpg'
-    },
+    }
   ];
+  */
+  public seriesLista: Array<Conteudo> = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  public getAllAnimes(): Array<Conteudo> {
-    return this.animesLista;
+  public getAllAnimes(): Observable<Conteudo[]> {
+    return this.http.get<Conteudo[]>('http://localhost:3000/animes');
   }
 
-  public getIdAnimes(id: number): Conteudo{
-    for (let obj of this.animesLista){
-      if(obj.id === id)
-      return obj;
-    }
-    return new Conteudo();
+  public getIdAnimes(id: number): Observable<Conteudo>{
+    return this.http.get<Conteudo>('http://localhost:3000/animes/'+id);
   }
 
-  public getAllSeries(): Array<Conteudo> {
-    return this.seriesLista;
+  public addAnimes(conteudo: Conteudo): Observable<any> {
+    conteudo.imagem = './../../assets/img/clients/client-1.jpg';
+    const conteudoJSON = JSON.stringify(conteudo);
+
+    return this.http.post<Conteudo>('http://localhost:3000/animes', conteudoJSON, httpOptions);
   }
 
-  public getIdSeries(id: number): Conteudo{
-    for(let obj of this.seriesLista){
-      if(obj.id === id)
-      return obj;
-    }
-    return new Conteudo();
+  public getAllSeries(): Observable<Conteudo[]> {
+    return this.http.get<Conteudo[]>('http://localhost:3000/series');
+  }
+
+  public getIdSeries(id: number): Observable<Conteudo>{
+    return this.http.get<Conteudo>('http://localhost:3000/series/'+id);
+  }
+  public addSeries(conteudo: Conteudo): Observable<any> {
+    conteudo.imagem = './../../assets/img/cliseries/cliseries-1.jpg';
+    const conteudoJSON = JSON.stringify(conteudo);
+
+    return this.http.post<Conteudo>('http://localhost:3000/series', conteudoJSON, httpOptions);
   }
 
 

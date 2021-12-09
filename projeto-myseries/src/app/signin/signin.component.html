@@ -1,0 +1,64 @@
+<div class="row mt-3 mb-3 justify-content-center">
+
+  <div class="col-10">
+
+    <h1 class="text-center">Faça o seu registro e aproveite!</h1>
+
+    <form #form="ngForm" [formGroup]="perfilForm" (submit)="salvar()">
+
+      <div class="form-group">
+        <label for="nome">Nome</label>
+
+        <input type="text" name="nome" class="form-control" id="nome" formControlName="nome" required>
+
+        <div class="alert alert-danger mt-1"
+        *ngIf="(perfilForm.get('nome')?.errors?.required ||
+        perfilForm.get('nome')?.errors?.minlength ||
+        perfilForm.get('nome')?.errors?.maxlength) &&
+        (perfilForm.get('nome')?.touched || form.submitted)">
+          Informe o nome (6 a 150 caracteres)
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" class="form-control" id="email" formControlName="email" required>
+
+        <div class="alert alert-danger mt-1"
+        *ngIf="(perfilForm.get('email')?.errors?.required || perfilForm.get('email')?.errors?.email) && (perfilForm.get('email')?.touched || form.submitted)">
+          Informe o e-mail corretamente
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" class="form-control" id="senha" formControlName="senha" required>
+
+        <div class="alert alert-danger" *ngIf="(perfilForm.get('senha')?.errors?.required || perfilForm.get('senha')?.errors?.minlength) &&
+        (perfilForm.get('senha')?.touched || form.submitted)">
+          Informe uma senha com pelo menos 6 caracteres
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="idade">Idade</label>
+        <input type="number" name="idade" class="form-control" id="idade" formControlName="idade" required>
+
+        <div class="alert alert-danger" *ngIf="(perfilForm.get('idade')?.errors?.required || perfilForm.get('idade')?.errors?.min) &&
+        (perfilForm.get('idade')?.touched || form.submitted)">
+          Informe a idade
+        </div>
+      </div>
+
+
+      <button [disabled]="!form.valid" type="submit" class="btn btn-success btn-block">
+        Salvar
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

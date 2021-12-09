@@ -1,0 +1,60 @@
+
+<div class="row mb-3 mt-3">
+
+  <div class="row mt-2 mb-2">
+    <div class="col-3">
+      <button class="btn btn-primary" [routerLink]="['/novo']">
+        Novo
+      </button>
+    </div>
+  </div>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+
+        <th scope="col">#ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Descrição</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let anime of animesLista">
+        <th scope="row">{{anime.id}}</th>
+        <td>
+          <a [routerLink]="['/detalhes', anime.id]"> {{anime.nome}} </a>
+        </td>
+        <td>{{anime.descricao}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <h3>Séries</h3>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Descrição</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let serie of seriesLista">
+        <th scope="row">{{serie.id}}</th>
+        <td>
+          <a [routerLink]="['/detalhes', serie.id]"> {{serie.nome}} </a>
+        </td>
+        <td>{{serie.descricao}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>
+

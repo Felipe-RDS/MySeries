@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Conteudo } from './../model/conteudo.model';
-import { ConteudosService } from './../services/conteudos.service';
+import { Conteudo } from '../../model/conteudo.model';
+import { ConteudosService } from '../../services/conteudos.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -20,7 +20,10 @@ export class SeriesDetalhesComponent implements OnInit {
   ngOnInit(): void {
     const codigo: number = Number(this.rotaAtiva.snapshot.paramMap.get('id'));
     console.log(codigo);
-    this.serie = this.seriesService.getIdSeries(codigo);
+
+    this.seriesService.getIdSeries(codigo).subscribe((serie:Conteudo) => {
+      this.serie = serie;
+    })
   }
 
 }

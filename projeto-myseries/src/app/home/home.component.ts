@@ -39,8 +39,12 @@ export class HomeComponent implements OnInit {
               private seriesService: ConteudosService) { }
 
   ngOnInit(): void {
-    this.animesLista = this.animesService.getAllAnimes();
-    this.seriesLista = this.seriesService.getAllSeries();
+    this.animesService.getAllAnimes().subscribe((listaAnimes: Conteudo[])=>{
+      this.animesLista = listaAnimes;
+    });
+    this.seriesService.getAllSeries().subscribe((listaSeries: Conteudo[])=>{
+      this.seriesLista = listaSeries;
+    });
   }
 
   ngAfterViewInit() {

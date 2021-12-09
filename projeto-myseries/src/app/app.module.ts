@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ConteudosModule } from './conteudos/conteudos.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,9 +12,14 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AnimesComponent } from './animes/animes.component';
-import { AnimesDetalhesComponent } from './animes-detalhes/animes-detalhes.component';
+//import { AnimesDetalhesComponent } from './conteudos/animes-detalhes/animes-detalhes.component';
 import { SeriesComponent } from './series/series.component';
-import { SeriesDetalhesComponent } from './series-detalhes/series-detalhes.component';
+//import { SeriesDetalhesComponent } from './conteudos/series-detalhes/series-detalhes.component';
+import { LoginComponent } from './login/login.component';
+import { PerfilComponent } from './perfil/perfil.component';
+//import { ConteudoNovoComponent } from './conteudo-novo/conteudo-novo.component';
+import { SigninComponent } from './signin/signin.component';
+import { PainelComponent } from './painel/painel.component';
 
 
 
@@ -24,13 +32,22 @@ import { SeriesDetalhesComponent } from './series-detalhes/series-detalhes.compo
     FooterComponent,
     HomeComponent,
     AnimesComponent,
-    AnimesDetalhesComponent,
+    //AnimesDetalhesComponent,
     SeriesComponent,
-    SeriesDetalhesComponent,
+    //SeriesDetalhesComponent,
+    LoginComponent,
+    PerfilComponent,
+    //ConteudoNovoComponent,
+    SigninComponent,
+    PainelComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    ConteudosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
