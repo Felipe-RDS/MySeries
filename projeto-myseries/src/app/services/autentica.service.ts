@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Perfil } from '../model/perfil.model';
 
@@ -10,6 +10,8 @@ import { PerfilService } from './perfil.service';
 })
 export class AutenticaService {
   private autenticado: boolean = false;
+
+  public menuHabilitado = new EventEmitter<boolean>();
 
   constructor(private router: Router,
               private perfilService: PerfilService) {}
@@ -25,7 +27,7 @@ export class AutenticaService {
 
       if (perfil.email) {
         this.autenticado = true;
-        console.log('Login!');
+        this.menuHabilitado.emit(true);
         this.router.navigate(['/']);
       }else{
         console.log('Login inválido!');

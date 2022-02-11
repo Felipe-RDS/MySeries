@@ -26,12 +26,6 @@ const routes: Routes = [
     path: 'animes',
     component: AnimesComponent
   },
-  /*
-  {
-    path: 'animes-detalhes/:id',
-    component: AnimesDetalhesComponent
-  },
-  */
   {
     path: 'series',
     component: SeriesComponent
@@ -41,19 +35,6 @@ const routes: Routes = [
     component: PainelComponent,
     canActivate: [AuthGuardService]
   },
-  /*
-  {
-    path: 'series-detalhes/:id',
-    component: SeriesDetalhesComponent
-  },
-  */
-  /*
-  {
-    path: 'conteudo-novo',
-    component: ConteudoNovoComponent,
-    canActivate: [AuthGuardService]
-  },
-  */
   {
     path: 'login',
     component: LoginComponent

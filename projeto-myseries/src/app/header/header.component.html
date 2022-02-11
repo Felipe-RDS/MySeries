@@ -12,7 +12,7 @@
 
         <li class="active"><a [routerLink] = "['/animes']" routerLinkActive="active">Animes</a></li>
         <li class="active"><a [routerLink] = "['/series']" routerLinkActive="active">Séries</a></li>
-        <li class="active"><a [routerLink] = "['/painel']" routerLinkActive="active">Painel</a></li>
+        <li class="active" *ngIf= "mostraMenu"><a [routerLink] = "['/painel']" routerLinkActive="active">Painel</a></li>
         <!--
         <li class="active"><a [routerLink] = "['/conteudo-novo']" routerLinkActive="active">Conteudo-Novo</a></li>
         -->
